@@ -2,6 +2,7 @@
   "name": "P5js-Projects",
   "projects": [
     "BinaryTree",
-    "CollatzConjecture"
+    "CollatzConjecture",
+    "MazeGeneration"
   ]
 }

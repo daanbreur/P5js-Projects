@@ -1,4 +1,6 @@
 {
   "name": "P5js-Projects",
-  "projects": []
+  "projects": [
+    'BinaryTree'
+  ]
 }

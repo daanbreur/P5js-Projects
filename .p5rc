@@ -1,6 +1,7 @@
 {
   "name": "P5js-Projects",
   "projects": [
-    "BinaryTree"
+    "BinaryTree",
+    "CollatzConjecture"
   ]
 }

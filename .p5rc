@@ -3,6 +3,7 @@
   "projects": [
     "BinaryTree",
     "CollatzConjecture",
-    "MazeGeneration"
+    "MazeGeneration",
+    "GridOfColors"
   ]
 }

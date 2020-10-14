@@ -1,54 +1,56 @@
-let cols, rows;
-let w = 20;
+"use strict";
 
-let current,
-	grid = [],
-	stack = [];
+var cols = void 0,
+    rows = void 0;
+var w = 20;
+
+var current = void 0,
+    grid = [],
+    stack = [];
 
 function setup() {
 	// createCanvas(windowWidth, windowHeight);
 	createCanvas(900, 900);
-	
+
 	cols = floor(width / w);
 	rows = floor(height / w);
 
-	for (let i = 0; i < rows; i++) {
+	for (var i = 0; i < rows; i++) {
 		grid[i] = [];
-		for (let j = 0; j < cols; j++) {
-			let cell = new Cell(i, j);
+		for (var j = 0; j < cols; j++) {
+			var cell = new Cell(i, j);
 			grid[i][j] = cell;
 		}
 	}
 
 	current = grid[0][0];
-	current2 = grid[rows-1][cols-1];
+	current2 = grid[rows - 1][cols - 1];
 }
 
 function draw() {
 	background(51);
-	for (let j = 0; j < rows; j++) {
-		for (let i = 0; i < cols; i++) {
+	for (var j = 0; j < rows; j++) {
+		for (var i = 0; i < cols; i++) {
 			grid[j][i].show();
 		}
 	}
 
 	current.highlight();
 	current.visited = true;
-	let next = current.getNeighbor();
+	var next = current.getNeighbor();
 	// if (!next && stack.length > 0) return current = stack.pop();
 	if (next) {
 		next.visited = true;
 		next.c = 1;
-		stack.push(current)
+		stack.push(current);
 		removeWalls(current, next);
 		current = next;
 	} else if (stack.length > 0) current = stack.pop();
-
 }
 
 function removeWalls(current, next) {
-	let x = current.i - next.i;
-	let y = current.j - next.j;
+	var x = current.i - next.i;
+	var y = current.j - next.j;
 
 	switch (x) {
 		case -1:

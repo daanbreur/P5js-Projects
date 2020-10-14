@@ -21,7 +21,6 @@ function setup() {
 	}
 
 	current = grid[0][0];
-	current2 = grid[rows-1][cols-1];
 }
 
 function draw() {

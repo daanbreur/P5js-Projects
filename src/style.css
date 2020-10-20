@@ -1,0 +1,16 @@
+body {
+    border:0px;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    overflow: hidden;
+    background-color: #515151;
+}
+
+.navbar {
+  width: 55%;
+  height: 100vh;
+  margin: 0 auto;
+  display: block;
+  background-color: #fff;
+}

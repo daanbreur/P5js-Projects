@@ -4,6 +4,7 @@
     "BinaryTree",
     "CollatzConjecture",
     "MazeGeneration",
-    "GridOfColors"
+    "GridOfColors",
+    "WindyTree"
   ]
 }

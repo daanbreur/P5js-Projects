@@ -2,12 +2,11 @@
 let excludeFolders = ['.github', 'src', 'libraries'], githubData;
 
 // HTML Elements
-// let projects = document.getElementById('projects');
-// let projects;
+let projects, navbar;
 
 
 window.onload = async () => {
-    // projects = document.getElementById('projects');
+    projects = document.getElementById('projects');
 
     githubData = await fetch(`https://api.github.com/repos/daanbreur/P5js-Projects/git/trees/main`)
         .then(res => res.json())

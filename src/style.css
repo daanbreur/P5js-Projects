@@ -1,16 +1,15 @@
 body {
-    border:0px;
-    margin: 0px;
-    padding: 0px;
-    display: block;
-    overflow: hidden;
-    background-color: #515151;
+  border:0px;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  display: flex;
+  background-color: #000000;
 }
 
-.navbar {
+.projects {
   width: 55%;
   height: 100vh;
   margin: 0 auto;
-  display: block;
-  background-color: #fff;
+  background-color: #505050;
 }

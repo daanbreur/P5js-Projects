@@ -5,6 +5,7 @@
     "CollatzConjecture",
     "MazeGeneration",
     "GridOfColors",
-    "WindyTree"
+    "WindyTree",
+    "SevenSegmentDisplay"
   ]
 }

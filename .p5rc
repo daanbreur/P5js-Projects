@@ -6,6 +6,7 @@
     "MazeGeneration",
     "GridOfColors",
     "WindyTree",
-    "SevenSegmentDisplay"
+    "SevenSegmentDisplay",
+    "L-SystemFractal"
   ]
 }

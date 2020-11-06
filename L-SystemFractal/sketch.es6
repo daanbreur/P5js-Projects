@@ -67,4 +67,16 @@ function setup() {
 		generate();
 		turtle();
 	};
+
+	let zoomOutBtn = createButton('-').position(0, genBtn.height).size(genBtn.width/2);
+	zoomOutBtn.elt.onclick = () => {
+		len *= 0.7;
+		turtle();
+	}
+	
+	let zoomInBtn = createButton('+').position(zoomOutBtn.width, genBtn.height).size(genBtn.width/2);
+	zoomInBtn.elt.onclick = () => {
+		len /= 0.7;
+		turtle();
+	}
 }

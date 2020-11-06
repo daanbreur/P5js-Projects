@@ -67,4 +67,16 @@ function setup() {
 		generate();
 		turtle();
 	};
+
+	var zoomOutBtn = createButton('-').position(0, genBtn.height).size(genBtn.width / 2);
+	zoomOutBtn.elt.onclick = function () {
+		len *= 0.7;
+		turtle();
+	};
+
+	var zoomInBtn = createButton('+').position(zoomOutBtn.width, genBtn.height).size(genBtn.width / 2);
+	zoomInBtn.elt.onclick = function () {
+		len /= 0.7;
+		turtle();
+	};
 }

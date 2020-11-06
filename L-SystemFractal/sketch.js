@@ -1,13 +1,13 @@
-let axiom = 'F';
-let rules = [
-	{
-		a: 'F',
-		b: 'FF+[+F-F-F]-[-F+F+F]',
-	},
-];
+'use strict';
 
-let angle;
-let len = 100;
+var axiom = 'F';
+var rules = [{
+	a: 'F',
+	b: 'FF+[+F-F-F]-[-F+F+F]'
+}];
+
+var angle = void 0;
+var len = 100;
 
 function turtle() {
 	background(51);
@@ -33,11 +33,11 @@ function turtle() {
 
 function generate() {
 	len *= 0.7;
-	let nextAxiom = '';
-	for (let i = 0; i < axiom.length; i++) {
-		let current = axiom.charAt(i);
-		let found = false;
-		for (let j = 0; j < rules.length; j++) {
+	var nextAxiom = '';
+	for (var i = 0; i < axiom.length; i++) {
+		var current = axiom.charAt(i);
+		var found = false;
+		for (var j = 0; j < rules.length; j++) {
 			if (current == rules[j].a) {
 				found = true;
 				nextAxiom += rules[j].b;
@@ -54,8 +54,8 @@ function setup() {
 
 	angle = radians(25);
 
-	let genBtn = createButton('Generate').position(0, 0);
-	genBtn.elt.onclick = async () => {
+	var genBtn = createButton('Generate').position(0, 0);
+	genBtn.elt.onclick = async function () {
 		generate();
 		turtle();
 	};

@@ -1,3 +1,5 @@
+let angle, len;
+
 let axiom = 'F';
 let rules = [
 	{
@@ -5,9 +7,6 @@ let rules = [
 		b: 'FF+[+F-F-F]-[-F+F+F]',
 	},
 ];
-
-let angle;
-let len = 100;
 
 function turtle() {
 	background(51);
@@ -59,9 +58,13 @@ function generate() {
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
+	initializeDom();
 
 	angle = radians(25);
+	len = 100;
+}
 
+function initializeDom() {
 	let genBtn = createButton('Generate').position(0, 0);
 	genBtn.elt.onclick = async () => {
 		generate();

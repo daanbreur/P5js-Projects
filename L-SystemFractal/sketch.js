@@ -16,17 +16,25 @@ function turtle() {
 	stroke(255, 100);
 	for (var i = 0; i < axiom.length; i++) {
 		var current = axiom.charAt(i);
-		if (current == 'F') {
-			line(0, 0, 0, -len);
-			translate(0, -len);
-		} else if (current == '+') {
-			rotate(angle);
-		} else if (current == '-') {
-			rotate(-angle);
-		} else if (current == '[') {
-			push();
-		} else if (current == ']') {
-			pop();
+		switch (current) {
+			case 'F':
+				line(0, 0, 0, -len);
+				translate(0, -len);
+				break;
+			case '+':
+				rotate(angle);
+				break;
+			case '-':
+				rotate(-angle);
+				break;
+			case '[':
+				push();
+				break;
+			case ']':
+				pop();
+				break;
+			default:
+				break;
 		}
 	}
 }

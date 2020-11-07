@@ -27,7 +27,8 @@ function setup() {
 
 	addDisplay = createButton('Add Display').position(20, windowHeight - 60);
 	addDisplay.elt.onclick = function () {
-		var x = displays[displays.length - 1].x + 140;
+		var x = 40;
+		if (displays.length > 0) x = displays[displays.length - 1].x + 140;
 		displays.push(new SevenSegmentDisplay(x, 20));
 		setDisplays(setValueInput.value().split(''));
 	};

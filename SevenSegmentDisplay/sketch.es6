@@ -1,6 +1,7 @@
 let index = 0;
 let displays = [],
 	setValueInput,
+	setValueBtn,
 	addDisplay,
 	removeDisplay;
 
@@ -17,11 +18,13 @@ function setup() {
 		let x = 40;
 		if (displays.length > 0) x = displays[displays.length-1].x + 140;
 		displays.push(new SevenSegmentDisplay(x, 20));
-		setDisplays(setValueInput.value().split(''))
+		setDisplays(setValueInput.value());
 	}
 	removeDisplay = createButton('Remove Display').position(20 + addDisplay.width, windowHeight - 60);
 	removeDisplay.elt.onclick = function(){
 		displays.pop();
+		setDisplays(setValueInput.value());
+	}
 
 	setValueInput = createInput().position(20, windowHeight - 40);
 	setValueInput.attribute('placeholder', 'Number to be displayed');
@@ -39,7 +42,7 @@ function draw() {
 	background(0);
 
 	if (counting) {
-		setDisplays(index.toString().split(''));
+		setDisplays(index.toString());
 		index = (index + 1) % (1*(10**displays.length));
 	}
 
@@ -49,6 +52,22 @@ function draw() {
 }
 
 function setDisplays(n) {
+	n = n.length >= displays.length ? n : new Array(displays.length - n.length + 1).join('0') + n;
+	n = n.split('');
+
+	if (displays.length < n.length) {
+		let extraDisplays = n.length - displays.length;
+		for (let i = 0; i < extraDisplays; i++) {
+			let x = 40;
+			if (displays.length > 0) x = displays[displays.length-1].x + 140;
+			displays.push(new SevenSegmentDisplay(x, 20));
+		}
+	} else if (displays.length > n.length) {
+		let extraDisplays = displays.length - n.length;
+		for (let i = 0; i < extraDisplays; i++) {
+			displays.pop();
+		}
+	}
 	for (let i = displays.length - 1; i >= 0; i--) {
 		displays[i].setNumber(n[i]);
 	}

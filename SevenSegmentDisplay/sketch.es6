@@ -12,15 +12,6 @@ function setup() {
 	displays.push(new SevenSegmentDisplay(40, 20));
 	displays.push(new SevenSegmentDisplay(180, 20));
 
-	setValueInput = createInput();
-	setValueInput.position(20, windowHeight - 40);
-	setValueInput.attribute('placeholder', 'Number to be displayed');
-	setValueInput.input(function () {
-		counting = false;
-		let data = this.value().split('');
-		setDisplays(data);
-	});
-
 	addDisplay = createButton('Add Display').position(20, windowHeight - 60);
 	addDisplay.elt.onclick = function(){
 		let x = 40;
@@ -31,6 +22,14 @@ function setup() {
 	removeDisplay = createButton('Remove Display').position(20 + addDisplay.width, windowHeight - 60);
 	removeDisplay.elt.onclick = function(){
 		displays.pop();
+
+	setValueInput = createInput().position(20, windowHeight - 40);
+	setValueInput.attribute('placeholder', 'Number to be displayed');
+
+	setValueBtn = createButton('Set').position(20 + setValueInput.width, windowHeight - 40);
+	setValueBtn.elt.onclick = function () {
+		counting = false;
+		setDisplays(setValueInput.value());
 	}
 
 	frameRate(3);

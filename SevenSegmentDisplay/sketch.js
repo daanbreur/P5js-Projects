@@ -13,8 +13,6 @@ function setup() {
 
 	displays.push(new SevenSegmentDisplay(40, 20));
 	displays.push(new SevenSegmentDisplay(180, 20));
-	displays.push(new SevenSegmentDisplay(320, 20));
-	displays.push(new SevenSegmentDisplay(460, 20));
 
 	setValueInput = createInput();
 	setValueInput.position(20, windowHeight - 40);
